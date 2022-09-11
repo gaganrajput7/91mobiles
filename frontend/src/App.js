@@ -1,10 +1,11 @@
-import logo from "./logo.svg";
+
 import "./App.css";
+import MainRoutes from "./components/MainRoutes";
 
 function App() {
   return (
     <div className="App">
-      <h1 className='italic font-bold text-red-900'>gagan</h1>
+    <MainRoutes/>
     </div>
   );
 }
