@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require('cors')
 const userRouter = require("./routes/userRouter");
 const connection = require("./db/db");
+app.use(cors({}))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use("/", userRouter);
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("App Running");
 });
 app.listen(process.env.PORT || 8080, () => {

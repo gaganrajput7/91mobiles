@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+  let token = JSON.parse(localStorage.getItem("91mobile"));
+
+  if (!token) {
+    navigate("/login");
+  }
   return (
-    <div>Home</div>
-  )
+    <>
+      <div>Home</div>
+    </>
+  );
 }
 
-export default Home
+export default Home;
